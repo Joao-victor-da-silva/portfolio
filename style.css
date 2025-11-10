@@ -1,0 +1,813 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+section {
+    padding-top: 5rem;    
+    padding-bottom: 5rem; 
+    min-height: 75vh;     
+}
+
+.corHeader {
+    background-color: black;
+}
+
+
+.navbar .nav-link span {
+    position: relative;
+    color: white;
+}
+
+
+.navbar .nav-link span::after {
+    content: '';
+
+
+    height: 3px;
+    background: linear-gradient(to right,
+            #00D1FF,
+            #A600FF);
+    border-radius: 99px;
+
+
+    position: absolute;
+    left: 50%;
+
+    bottom: -0.4rem;
+
+
+    width: 100%;
+
+
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.1s ease-in-out;
+
+    color: white;
+}
+
+
+.navbar .nav-link:hover span::after {
+
+    transform: translateX(-50%) scaleX(1);
+    color: white;
+}
+
+.navbar .nav-link.active span::after {
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    color: var(--bs-navbar-color) !important;
+}
+
+.corCinza {
+    background-color: rgb(48, 48, 48);
+    color: white;
+}
+
+.corCinzasEscuro {
+    background-color: #242424;
+}
+
+
+.corBranca :hover{
+    color: white;
+}
+
+
+.btn-gradient {
+    /* Baseado no .btn do Bootstrap para consistência */
+    display: inline-block;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #fff; /* Cor do texto */
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1.5rem; /* Um pouco maior para destaque */
+    font-size: 1rem;
+    border-radius: 0.375rem; /* Padrão Bootstrap */
+    
+    /* O MESMO GRADIENTE DO SEU HEADER */
+    background-image: linear-gradient(
+        to right, 
+        #00D1FF, /* Cor 1 (Ciano) */
+        #A600FF  /* Cor 2 (Roxo/Magenta) */
+    );
+    background-size: 100% 100%; /* Garante que o fundo cubra tudo */
+    
+    /* Efeito de "zoom" sutil no hover */
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+    color: #fff; /* Garante que o texto fique branco */
+    transform: scale(1.05); /* Efeito de leve "zoom" */
+}
+
+
+/* ============================================= */
+/* === VIDEO SLIDER (Seção Sobre mim) === */
+/* ============================================= */
+/* Este é o código CSS que você forneceu,
+  movido para o arquivo externo.
+*/
+
+#video-compare-container {
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+    width: 100%; /* Garante que ocupe a coluna */
+    
+    /* Isto define a proporção (aspect-ratio) do seu vídeo.
+      O valor 42.3% é do seu código original.
+      Se o vídeo for 16:9, você pode usar 56.25% (9 / 16 * 100)
+    */
+    padding-top: 42.3%; 
+    
+    /* Bônus: Bordas arredondadas para combinar com o design */
+    border-radius: 0.5rem;
+    overflow: hidden; /* Corta o vídeo para as bordas arredondadas */
+}
+
+#video-compare-container > video {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra o espaço */
+}
+
+#video-clipper {
+    width: 50%; /* Ponto inicial do divisor */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#video-clipper video {
+    width: 200%;
+    position: absolute; /* Corrigi o typo "postion" do seu código */
+    height: 100%;
+    object-fit: cover;
+}
+
+.title-gradient-underline span {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.5rem; /* Espaço para o traço */
+}
+
+.title-gradient-underline span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%; /* Largura do traço (como na sua imagem) */
+    height: 4px;
+    border-radius: 99px;
+    
+    /* Nosso gradiente padrão */
+    background: linear-gradient(to right, #00D1FF, #A600FF);
+}
+
+/* ============================================= */
+/* === CARDS DE HABILIDADE === */
+/* ============================================= */
+
+/* 1. O Card Externo (Controla a Borda + Brilho) */
+.skill-card {
+    position: relative;
+    
+    /* A "Borda Gradiente" 
+       Nós damos um padding de 3px e aplicamos o gradiente
+       no fundo do card externo.
+    */
+    padding: 3px; 
+    border-radius: 12px; /* Borda arredondada */
+    background: linear-gradient(135deg, #00D1FF, #A600FF);
+    
+    /* Efeito de "levantar" no hover */
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+/* 2. O Efeito de "Blur/Glow" (Brilho) */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* O mesmo gradiente */
+    background: linear-gradient(135deg, #00D1FF, #A600FF);
+    
+    /* O "Blur" */
+    filter: blur(25px); 
+    
+    /* Posição (atrás) e opacidade */
+    z-index: -1;
+    opacity: 0.6;
+    
+    /* Transição suave para o brilho */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.skill-card:hover::before {
+    opacity: 0.8; /* Intensifica o brilho */
+}
+
+/* 3. O "Miolo" (Conteúdo) do Card */
+.skill-card-inner {
+    /* Cor de fundo do card (cinza escuro) */
+    background-color: #242424; 
+    
+    padding: 1.5rem 1rem;
+    
+    /* Borda interna (tem que ser menor que a do .skill-card) */
+    border-radius: 9px; 
+    
+    /* Garante que o card interno preencha o pai */
+    height: 100%; 
+}
+
+/* 4. Estilo do Ícone (baseado na sua imagem) */
+.skill-card-inner i {
+    /* Cor roxa (pegando do nosso gradiente) */
+    color: #A600FF; 
+}
+
+
+/* ============================================= */
+/* === BARRA DE PROGRESSO CUSTOMIZADA === */
+/* ============================================= */
+
+/* Fundo da barra (onde ela "corre") */
+.progress {
+    /* Fundo escuro e semi-transparente */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 99px; /* Arredondada */
+}
+
+/* A barra de progresso (a parte colorida) */
+.progress-bar-gradient {
+    /* Nosso gradiente padrão */
+    background-image: linear-gradient(to right, #00D1FF, #A600FF);
+    
+    /* Sombra no texto para melhor legibilidade */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.skill-card-inner i,
+.skill-card-inner svg {
+    /* Cor roxa (pegando do nosso gradiente) */
+    color: #A600FF; 
+    
+    /* Precisamos definir um tamanho para o SVG, 
+      já que ele não é uma fonte.
+      'display-3' (do <i>) equivale a aprox. 3rem (48px).
+    */
+    width: 48px;
+    height: 48px;
+}
+
+/* ============================================= */
+/* === SEÇÃO PROJETOS === */
+/* ============================================= */
+
+/* 1. O Wrapper do Card (para o "brilho" gradiente) */
+.project-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* 2. O Efeito de "Brilho" (Gradient Shadow Box) */
+.project-card::before {
+    content: '';
+    position: absolute;
+    /* Posição e tamanho (um pouco maior que o card) */
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    
+    /* Nosso gradiente padrão */
+    background: linear-gradient(135deg, #008baa, #67009e); 
+    /*box-shadow: #242424;*/
+    /* O Blur (borrão) */
+    filter: blur(25px); 
+    
+    /* Posição (atrás) e opacidade */
+    z-index: -1;
+    opacity: 0.6;
+    
+    /* Arredondamento (deve ser maior que o card interno) */
+    border-radius: 1rem;
+    
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover::before {
+    opacity: 1; 
+    
+}
+
+/* 3. O Conteúdo do Card (fundo escuro) */
+.project-card-inner {
+    background-color: #2b2b2b; /* Mesmo fundo dos skills */
+    border-radius: 0.75rem; /* Borda interna */
+    overflow: hidden; /* Corta o vídeo para a borda */
+    box-shadow: #000000;
+}
+
+/* 4. A Coluna do Vídeo */
+.project-video-col {
+    padding: 0; /* Remove o padding do bootstrap */
+    cursor: pointer; /* Indica que é clicável */
+    position: relative; /* Para o overlay (opcional) */
+}
+
+.project-card-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo cobrir todo o espaço */
+}
+
+/* ============================================= */
+/* === MODAL E CARROSSEL (ESTILO STEAM) === */
+/* ============================================= */
+
+/* 1. Conteúdo do Modal (fundo escuro) */
+.project-modal-content {
+    background-color: #242424;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Botão de Fechar (X) Customizado */
+.project-modal-close-btn {
+    /* Posição (canto superior direito) */
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 10;
+    
+    /* Estilo (círculo) */
+    background-color: #7e0000;
+    border-radius: 50%;
+    padding: 0.5rem;
+    opacity: 1;
+}
+.project-modal-close-btn:hover {
+
+    background-color: #ff0000;
+}
+
+/* 3. Os Thumbnails (Indicadores) */
+.project-carousel-thumbs {
+    /* Transforma os 'indicators' em uma lista horizontal */
+    position: static; /* Tira da sobreposição */
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    overflow-x: auto; /* Adiciona scroll horizontal */
+    justify-content: flex-start; /* Alinha à esquerda */
+    margin: 0;
+    padding: 1rem;
+    gap: 10px; /* Espaço entre os thumbs */
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================= */
+/* === THUMBNAILS DO CARROSSEL (NOVA ESTRATÉGIA) === */
+/* ============================================= */
+
+/* 1. O container (fundo e padding) */
+.project-thumb-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+/* 2. O Link (<a>) que segura a imagem */
+.thumbnail-link {
+    display: block; /* Faz o <a> preencher o <div> */
+    opacity: 0.5;
+    border: 2px solid transparent;
+    border-radius: 4px; /* Borda arredondada */
+    overflow: hidden;   /* Garante que a img não "vaze" */
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnail-link:hover {
+    opacity: 1;
+    border-color: #00D1FF; /* Borda Ciano */
+}
+
+/* 4. A Imagem do Thumbnail */
+.project-thumb-img {
+    width: 100%;
+    
+    /* AQUI ESTÁ A SOLUÇÃO:
+      Definimos uma altura fixa (70px) e usamos 'object-fit: cover'.
+      Isso garante que todas as imagens tenham o mesmo tamanho
+      e sejam "cortadas" (sem amassar).
+    */
+    height: 100%; 
+    object-fit: cover;
+    
+    /* Corrige um alinhamento padrão de imagens */
+    /* vertical-align: middle;*/
+}
+
+.modal-xl {
+    max-width: 70%;
+}
+
+/* ============================================= */
+/* === SEÇÃO FORMAÇÃO (TIMELINE) === */
+/* ============================================= */
+
+.timeline-container {
+    position: relative;
+    padding: 2rem 0; /* Espaço no topo e fundo */
+}
+
+/* 1. A Linha Vertical Central com Gradiente */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px; /* Largura da linha */
+    height: 100%;
+    transform: translateX(-50%);
+    
+    /* Nosso gradiente padrão (Vertical) */
+    background: linear-gradient(to bottom, #00D1FF, #A600FF);
+    
+    z-index: 1;
+    border-radius: 99px; /* Linha arredondada */
+}
+
+/* 2. Cada Item/Evento da Timeline */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 2.5rem; /* Espaço entre os itens */
+}
+/* Remove padding do último item */
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* 3. O Ícone (A "Bolinha" central) */
+.timeline-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10; /* Fica em cima da linha */
+    
+    /* Estilo da bolinha */
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to bottom, #00D1FF, #A600FF);
+    border-radius: 50%;
+    
+    /* Centraliza o ícone (chapéu) dentro da bolinha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    font-size: 1.5rem; /* Tamanho do ícone */
+    
+    /* Borda para destacar (cor = fundo da seção) */
+    border: 4px solid #242424; 
+}
+
+/* 4. O Ano (como na sua imagem de referência) */
+.timeline-year {
+    position: absolute;
+    top: 10px; /* Alinha com o centro do ícone */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    z-index: 5;
+}
+
+/* 5. O Card de Conteúdo (onde fica o .skill-card) */
+.timeline-content {
+    position: relative;
+    /* Metade da tela, menos o espaço para a linha/ícone */
+    width: calc(50% - 50px); 
+}
+
+/* --- A MÁGICA DA ALTERNÂNCIA (Layout Desktop) --- */
+
+/* Itens ÍMPARES (1, 3, 5...) - Ficam na ESQUERDA */
+.timeline-item:nth-child(odd) .timeline-content {
+    float: left; /* Alinha o card à esquerda */
+    text-align: right; /* Alinha o texto do card à direita */
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+    /* Posição do ano nos itens da esquerda */
+    left: calc(50% + 50px);
+}
+
+/* Itens PARES (2, 4, 6...) - Ficam na DIREITA */
+.timeline-item:nth-child(even) .timeline-content {
+    float: right; /* Alinha o card à direita */
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    /* Posição do ano nos itens da direita */
+    right: calc(50% + 50px);
+}
+
+/* Limpa o 'float' depois de cada item (importante!) */
+.timeline-item::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+
+/* --- LAYOUT MOBILE (Telas pequenas) --- */
+@media (max-width: 992px) { /* Ponto de quebra 'lg' */
+    
+    /* Centraliza a linha à esquerda */
+    .timeline-container::before {
+        left: 25px; /* Posição da linha (não mais 50%) */
+    }
+    
+    /* O ícone fica em cima da linha da esquerda */
+    .timeline-icon {
+        left: 25px;
+    }
+
+    /* O ano fica à direita do ícone */
+    .timeline-year {
+        left: 85px;
+        top: 10px;
+    }
+    
+    /* O card de conteúdo ocupa o espaço restante */
+    .timeline-content {
+        /* Largura total - espaço da linha/ano */
+        width: calc(100% - 85px); 
+        float: right; /* Todos os cards ficam à direita */
+    }
+    
+    /* Remove a necessidade de alternar */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        float: right;
+        text-align: left; /* Texto sempre alinhado à esquerda */
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-year,
+    .timeline-item:nth-child(even) .timeline-year {
+        left: 85px;
+        right: auto; /* Reseta o 'right' */
+    }
+}
+
+/* ============================================= */
+/* === SEÇÃO CONTATO === */
+/* ============================================= */
+
+/* 1. Cada item da lista (Email, Fone, etc) */
+.contact-item {
+    display: flex;
+    align-items: center;
+    /* Fundo escuro (mesmo do card de projetos) */
+    background-color: #242424; 
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 2. O ícone à esquerda */
+.contact-item .icon-part {
+    font-size: 2rem;
+    /* Cor Ciano do nosso gradiente */
+    color: #00D1FF; 
+    margin-right: 1.5rem;
+    line-height: 1; /* Alinhamento */
+}
+
+/* 3. O bloco de texto (Título e Dado) */
+.contact-item .text-part {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item .text-part .title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    /* Cor Roxa do nosso gradiente */
+    color: #A600FF; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 4. O dado (email, fone, etc.) */
+.contact-item .text-part .data-link,
+.contact-item .text-part .data-text {
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+/* Efeito hover só no link */
+.contact-item .text-part .data-link:hover {
+    text-decoration: underline;
+}
+
+/* 5. O botão de "Copiar" (à direita) */
+.contact-item .button-part {
+    /* Mágica: Joga o botão para a direita */
+    margin-left: auto; 
+    /* Posição relativa para o tooltip */
+    position: relative; 
+}
+
+.contact-item .btn-copy {
+    background: none;
+    border: 2px solid #00D1FF;
+    color: #00D1FF;
+    border-radius: 50%; /* Círculo */
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-item .btn-copy:hover {
+    background-color: #00D1FF;
+    color: #242424; /* Fica com a cor do fundo */
+    transform: scale(1.1);
+}
+
+/* 6. O Tooltip "Copiado!" (Fica escondido) */
+.btn-copy .tooltip-text {
+    visibility: hidden;
+    width: 100px;
+    background-color: #00D1FF;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Posição (acima do botão) */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Acima */
+    left: 50%;
+    margin-left: -50px; /* Centraliza */
+    
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Mostra o tooltip quando ele tem a classe 'show' */
+.btn-copy .tooltip-text.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ============================================= */
+/* === IMAGEM DE FUNDO (SEÇÃO INICIO) === */
+/* ============================================= */
+
+#inicio {
+    /* 1. Define a posição como 'relativa' 
+       Isso é essencial para o overlay funcionar. */
+    position: relative;
+    
+    /* 2. A IMAGEM DE FUNDO */
+    /* Troque 'sua-imagem-de-fundo.jpg' pelo caminho da sua imagem */
+    background-image: url('img//fundo.jpg');
+    
+    /* 3. Ajustes da Imagem */
+    background-size: cover;     /* Faz a imagem cobrir toda a seção */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+}
+
+/* 4. O OVERLAY ESCURO (para legibilidade) */
+#inicio::before {
+    content: ''; /* Obrigatório para pseudo-elementos */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Cor preta com 50% de opacidade. 
+       Ajuste (0,0,0, 0.5) para 0.7 se quiser mais escuro. */
+    /*background-color: rgba(0, 0, 0, 0.5); */
+    
+    /* O z-index 1 coloca o overlay ACIMA da imagem de fundo */
+    z-index: 1; 
+}
+
+/* 5. O CONTEÚDO (Texto, Foto, Ícones) */
+/* Precisamos garantir que o conteúdo fique ACIMA do overlay */
+#inicio > div {
+    position: relative;
+    /* O z-index 2 coloca o conteúdo ACIMA do overlay (z-index 1) */
+    z-index: 2;
+}
+
+/* ============================================= */
+/* === GRADIENTE ENTRE INICIO E SOBRE-MIN === */
+/* ============================================= */
+
+/* 1. Prepara a seção 'sobre-min' para o pseudo-elemento */
+#sobre-min {
+    /* Precisamos disso para posicionar o ::before */
+    position: relative; 
+    
+    /* IMPORTANTE: A cor de fundo da seção 'sobre-min'
+      (corCinzasEscuro) NÃO PODE estar na tag <main>.
+      Ela deve estar na <section> como você já tem:
+      <section id="sobre-min" class="corCinzasEscuro py-5 ...">
+    */
+}
+
+/* 2. O Gradiente (O "Fade-in") */
+#sobre-min::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    
+    /* Altura do "fade". 
+       Ajuste este valor se quiser uma transição maior ou menor.
+    */
+    height: 50px; 
+
+    /* A MÁGICA: Puxa o gradiente 150px PARA CIMA,
+      fazendo ele cobrir a parte de baixo da seção #inicio.
+    */
+    top: -50px; 
+
+    /* O Gradiente: 
+      Começa 'transparent' (na área da seção #inicio)
+      e vai até a cor da 'sobre-min' (#242424) na base.
+    */
+    background: linear-gradient(
+        to bottom, 
+        transparent, 
+        #242424 /* Esta é a cor da sua classe .corCinzasEscuro */
+    );
+    
+    /* Garante que o gradiente fique em cima da imagem 
+       de fundo do #inicio, mas atrás do conteúdo. */
+    z-index: 10; 
+}
+
+.corPreta{
+    background-color: #0c0c0c;
+}
+
+/* ============================================= */
+/* === AJUSTE DO TEXTO DA BARRA DE PROGRESSO === */
+/* ============================================= */
+
+/* Esta classe será aplicada ao <span> que segura a porcentagem.
+*/
+.progress-text-overlay {
+    /* Posição absoluta relativa ao .progress (que agora tem 'position-relative') */
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    /* Faz o <span> ocupar 100% da barra preta */
+    width: 100%;
+    height: 100%;
+    
+    /* Mágica para centralizar o texto (vertical e horizontalmente) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Garante que o texto fique em cima da barra gradiente */
+    z-index: 10; 
+    
+    /* Estilos do texto que pegamos do seu código original */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}

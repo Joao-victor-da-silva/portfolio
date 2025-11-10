@@ -1,0 +1,172 @@
+{
+    "projeto1": {
+        "media": [
+            {
+                "type": "video",
+                "src": "video/previu/Battle.mp4",
+                "thumb": "img/previu/BATTLE00.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/BATTLE01.PNG",
+                "thumb": "img/previu/BATTLE01.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/BATTLE02.PNG",
+                "thumb": "img/previu/BATTLE02.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/BATTLE03.PNG",
+                "thumb": "img/previu/BATTLE03.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/BATTLE04.PNG",
+                "thumb": "img/previu/BATTLE04.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/BATTLE05.PNG",
+                "thumb": "img/previu/BATTLE05.PNG"
+            }
+        ]
+    },
+    "projeto2": {
+        "media": [
+            {
+                "type": "video",
+                "src": "video/previu/magic01.mp4",
+                "thumb": "img/previu/magic01.PNG"
+            },
+            {
+                "type": "video",
+                "src": "video/previu/magic02.mp4",
+                "thumb": "img/previu/magic02.PNG"
+            },
+            {
+                "type": "video",
+                "src": "video/previu/magic03.mp4",
+                "thumb": "img/previu/magic03.PNG"
+            },
+            {
+                "type": "video",
+                "src": "video/previu/magic04.mp4",
+                "thumb": "img/previu/magic04.PNG"
+            },
+            {
+                "type": "video",
+                "src": "video/previu/magic05.mp4",
+                "thumb": "img/previu/magic05.PNG"
+            },
+            {
+                "type": "video",
+                "src": "video/previu/magic06.mp4",
+                "thumb": "img/previu/magic06.PNG"
+            }
+        ]
+    },
+        "projeto3": {
+        "media": [
+            {
+                "type": "video",
+                "src": "video/previu/FARM.mp4",
+                "thumb": "img/previu/Farm06.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/Farm02.PNG",
+                "thumb": "img/previu/Farm02.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/Farm03.PNG",
+                "thumb": "img/previu/Farm03.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/Farm04.PNG",
+                "thumb": "img/previu/Farm04.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/Farm05.PNG",
+                "thumb": "img/previu/Farm05.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/Farm01.PNG",
+                "thumb": "img/previu/Farm01.PNG"
+            }
+        ]
+    },
+     "projeto4": {
+        "media": [
+            {
+                "type": "video",
+                "src": "video/previu/PID.mp4",
+                "thumb": "img/previu/pid01.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/pid02.jpg",
+                "thumb": "img/previu/pid02.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/pid03.jpg",
+                "thumb": "img/previu/pid03.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/pid04.jpg",
+                "thumb": "img/previu/pid04.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/pid05.jpg",
+                "thumb": "img/previu/pid05.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/pid06.PNG",
+                "thumb": "img/previu/pid06.PNG"
+            }
+        ]
+    },
+    "projeto5": {
+        "media": [
+            {
+                "type": "video",
+                "src": "video/previu/Etec.mp4",
+                "thumb": "img/previu/vetORIGINAL.PNG"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/vet01.jpg",
+                "thumb": "img/previu/vet01.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/vet02.jpg",
+                "thumb": "img/previu/vet02.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/vet03.jpg",
+                "thumb": "img/previu/vet03.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/vet04.jpg",
+                "thumb": "img/previu/vet04.jpg"
+            },
+            {
+                "type": "image",
+                "src": "img/previu/vet06.PNG",
+                "thumb": "img/previu/vet06.PNG"
+            }
+        ]
+    }
+}
